@@ -1,0 +1,42 @@
+@model EmployeeManager.Models.Employee
+@{
+    ViewBag.Title = "Add New Employee";
+}
+
+<h2>Add New Employee</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div>
+        @Html.LabelFor(m => m.EmployeeID)
+        @Html.TextBoxFor(m => m.EmployeeID)
+        @Html.ValidationMessageFor(m => m.EmployeeID)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.EmployeeName)
+        @Html.TextBoxFor(m => m.EmployeeName)
+        @Html.ValidationMessageFor(m => m.EmployeeName)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Department)
+        @Html.TextBoxFor(m => m.Department)
+        @Html.ValidationMessageFor(m => m.Department)
+    </div>
+
+    <div>
+        @Html.LabelFor(m => m.Salary)
+        @Html.TextBoxFor(m => m.Salary)
+        @Html.ValidationMessageFor(m => m.Salary)
+    </div>
+
+    <button type="submit">Add</button>
+}
+
+@if (ViewBag.Error != null)
+{
+    <div style="color:red">@ViewBag.Error</div>
+}

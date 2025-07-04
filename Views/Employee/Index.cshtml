@@ -1,0 +1,27 @@
+@model List<EmployeeManager.Models.Employee>
+@{
+    ViewBag.Title = "Employee List";
+}
+
+<h2>Employees List</h2>
+
+<table>
+    <tr>
+        <th>EmployeeID</th>
+        <th>EmployeeName</th>
+        <th>Department</th>
+        <th>Salary</th>
+    </tr>
+
+@foreach (var emp in Model)
+{
+    <tr>
+        <td>@emp.EmployeeID</td>
+        <td>@emp.EmployeeName</td>
+        <td>@emp.Department</td>
+        <td>@emp.Salary</td>
+    </tr>
+}
+</table>
+
+<a href="@Url.Action("Create", "Employee")">Add New Employee</a>
